@@ -14,5 +14,9 @@ void main() {
     expect(add('1,2'), 3);
   });
 
+  test('handles newline as valid delimiter', () {
+    expect(add('1\n2,3'), 6);
+  });
+
 
 }
