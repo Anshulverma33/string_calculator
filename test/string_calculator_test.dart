@@ -22,4 +22,14 @@ void main() {
     expect(add('//;\n1;2'), 3);
   });
 
+  test('throws exception for negative numbers with message', () {
+    expect(
+      () => add('1,-2,-4'),
+      throwsA(predicate((e) =>
+          e is FormatException &&
+          e.message == 'negative numbers not allowed -2,-4')),
+    );
+  });
+
+
 }
