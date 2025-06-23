@@ -18,5 +18,11 @@ int add(String numbers) {
     parsedNumbers.add(int.parse(n));
   }
 
+  final negatives = parsedNumbers.where((n) => n < 0).toList();
+  if (negatives.isNotEmpty) {
+    throw FormatException('negative numbers not allowed ${negatives.join(',')}');
+  }
+
+
   return parsedNumbers.fold(0, (sum, n) => sum + n);
 }
