@@ -10,4 +10,9 @@ void main() {
     expect(add('5'), 5);
   });
 
+  test('returns sum of two comma-separated numbers', () {
+    expect(add('1,2'), 3);
+  });
+
+
 }
